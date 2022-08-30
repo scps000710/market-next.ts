@@ -5,7 +5,7 @@ import {
   AxiosResponse as OriginalAxiosResponse,
 } from 'axios';
 
-const url = 'http://localhost:3000/api/';
+const url = `/api/`;
 
 const pendingRequests = new Map();
 let store;

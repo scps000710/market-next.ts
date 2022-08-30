@@ -1,7 +1,7 @@
 import Header from '../components/index/Header';
 import Hero from '../components/index/Hero';
 import { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectUser } from '../store/slice/user';
 import Modal from 'react-modal';
 import { getItems } from '../utils/agent';
