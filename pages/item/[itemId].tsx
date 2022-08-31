@@ -22,7 +22,7 @@ const style = {
   buyButton: `absolute bottom-0 text-lg font-semibold mt-4 px-8 py-3 bg-[#2181e2] rounded-lg text-white hover:bg-[#42a0ff]`,
   authorImage: `h-[80px] w-[80px] rounded-full mr-10`,
   authorName: `font-semibold text-[2rem]`,
-  marketButton: `absolute right-0 text-lg font-semibold px-6 py-3 outline outline-[#2181e2] text-[#2181e2] rounded-lg mr-10 text-white hover:bg-gray-200`,
+  marketButton: `absolute right-0 text-lg font-semibold px-6 py-3 outline outline-[#2181e2] text-[#2181e2] rounded-lg mr-10 hover:bg-gray-200`,
   descriptionContainer: `flex flex-col`,
   itemDescriptionTitle: `text-[1.6rem] font-semibold`,
   itemDescriptionText: `m-4 whitespace-pre-warp`,
