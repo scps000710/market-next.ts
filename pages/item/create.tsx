@@ -10,7 +10,7 @@ const style = {
   wrapper: `flex flex-col py-4 items-center container-lg text-[#e5e8eb]`,
   formContainer: `flex flex-col`,
   img: `max-w-[400px] max-h-[400px]`,
-  imgUpload: `relative  font-semibold mt-2 px-6 py-3 bg-[#2181e2] rounded-lg text-white hover:bg-[#42a0ff] cursor-pointer`,
+  imgUpload: `relative font-semibold mt-2 px-6 py-3 bg-[#2181e2] rounded-lg text-white hover:bg-[#42a0ff] cursor-pointer`,
   createButton: `relative font-semibold px-6 py-3 bg-[#2181e2] rounded-lg text-white hover:bg-[#42a0ff] cursor-pointer`,
 };
 

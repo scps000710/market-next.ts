@@ -57,7 +57,7 @@ const Hero = () => {
             </div>
           </div>
           <div className={style.itemContainer}>
-            <Item {...item} />
+            <Item {...item} tie={false} />
           </div>
         </div>
       </div>

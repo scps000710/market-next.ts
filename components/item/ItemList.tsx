@@ -1,4 +1,3 @@
-import { AiOutlineSortDescending } from 'react-icons/ai';
 import Item from './item';
 import { itemObject } from '.';
 
@@ -13,7 +12,7 @@ const ItemList = (props: { items: Array<itemObject> }) => {
       {props.items.map((item, index) => {
         return (
           <div className={style.itemContainer} key={index}>
-            <Item {...item} />
+            <Item {...item} tie={true} />
           </div>
         );
       })}

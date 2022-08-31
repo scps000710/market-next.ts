@@ -8,7 +8,8 @@ const style = {
   infoContainer: `h-20 bg-[#313338] p-4 rounded-b-lg flex items-center text-white`,
   author: `flex flex-col justify-center ml-4`,
   authorImage: `h-[40px] rounded-full`,
-  title: `w-[100px] xl:w-[200px] text-clip overflow-hidden`,
+  titleTie: `w-[100px] xl:w-[200px] text-clip overflow-hidden`,
+  title: ` text-clip overflow-hidden`,
   authorName: `text-[#1868b7]`,
   infoIcon: `flex justify-end items-center flex-1 text-[#8a939b] text-3xl font-bold`,
 };
@@ -20,6 +21,7 @@ const Item = (props: {
   title: string;
   username: string;
   price: string;
+  tie: boolean;
 }) => {
   return (
     <div className={''}>
@@ -40,7 +42,9 @@ const Item = (props: {
                 src={`${props.authorSrc}`}
               />
               <div className={style.author}>
-                <div className={style.title}>{props.title}</div>
+                <div className={props.tie ? style.titleTie : style.title}>
+                  {props.title}
+                </div>
                 <div className={style.authorName}>{props.username}</div>
               </div>
               <div className={style.infoIcon}>${props.price}</div>

@@ -8,8 +8,9 @@ import toast from 'react-hot-toast';
 import { initUser } from '../../store/slice/user';
 
 const style = {
-  wrapper: `w-full px-[1.2rem] py-[0.8rem] flex flex-col`,
-  headerText: 'text-white mx-auto',
+  popUpWrapper: `w-full px-[1.2rem] py-[0.8rem] flex flex-col`,
+  wrapper: `w-1/2 mt-10 px-[1.2rem] py-6 flex flex-col bg-white rounded-lg`,
+  headerText: 'text-black mx-auto text-[1.3rem]',
   horizontalLine: `w-full flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5`,
   horizontalText: `text-center font-semibold mx-4 mb-0`,
   formContainer: `w-full text-center justify-center`,
@@ -40,7 +41,7 @@ const Login = (props: { display: string }) => {
   switch (props.display) {
     case 'popup':
       return (
-        <div className={style.wrapper}>
+        <div className={style.popUpWrapper}>
           <header className={style.headerText}>
             <div>請先登入 或 註冊</div>
           </header>
@@ -61,7 +62,7 @@ const Login = (props: { display: string }) => {
               <Input
                 title="電子郵件"
                 type="email"
-                placeholder="Email"
+                placeholder="Email(隨便打就好)"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setEmail(e.target?.value)
                 }
@@ -69,7 +70,7 @@ const Login = (props: { display: string }) => {
               <Input
                 title="密碼"
                 type="password"
-                placeholder="Password"
+                placeholder="Password(隨便打就好)"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(e.target?.value)
                 }
@@ -85,9 +86,6 @@ const Login = (props: { display: string }) => {
     default:
       return (
         <div className={style.wrapper}>
-          <header className={style.headerText}>
-            <div>請先登入 或 註冊</div>
-          </header>
           <div>
             <SsoButton icon={BsFacebook} text={'Facebook 註冊 / 登入'} />
             <SsoButton icon={BsTwitter} text={'Twitter 註冊 / 登入'} />
@@ -105,7 +103,7 @@ const Login = (props: { display: string }) => {
               <Input
                 title="電子郵件"
                 type="email"
-                placeholder="Email"
+                placeholder="Email(隨便打就好)"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setEmail(e.target?.value)
                 }
@@ -113,7 +111,7 @@ const Login = (props: { display: string }) => {
               <Input
                 title="密碼"
                 type="password"
-                placeholder="Password"
+                placeholder="Password(隨便打就好)"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                   setPassword(e.target?.value)
                 }
