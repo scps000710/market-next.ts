@@ -23,8 +23,7 @@ export default function handler(
 
   for (const i in ItemSource) {
     if (itemId === ItemSource[i].id) {
-      res.status(200).json(ItemSource[i]);
+      return res.status(200).json(ItemSource[i]);
     }
   }
-  res.status(404).json({ message: 'Not Found' });
 }
