@@ -45,6 +45,8 @@ const Header = () => {
   const [loginPopup, setLoginPopup] = useState(false);
   const [typingText, setTypingText] = useState('');
   const [searchItemsList, setSearchItemsList] = useState([]);
+  const [scrollY, setScrollY] = useState(0);
+  const [totalY, setTotalY] = useState(0);
 
   const menuButton = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -79,6 +81,25 @@ const Header = () => {
     }
   };
 
+  // check scroll to show login
+  useEffect(() => {
+    const scrollEvent = () => {
+      setTotalY(totalY + Math.abs(scrollY - window.scrollY));
+      setScrollY(window.scrollY);
+      if (totalY >= 2000 && !userStates.isLogin) {
+        setLoginPopup(true);
+      } else {
+        setLoginPopup(false);
+      }
+    };
+
+    window.addEventListener('scroll', () => scrollEvent());
+
+    return () => {
+      window.removeEventListener('scroll', () => scrollEvent());
+    };
+  }, [scrollY, userStates]);
+
   // check login
   useEffect(() => {
     if (userStates.token) {
@@ -106,19 +127,12 @@ const Header = () => {
   }, [userStates]);
 
   useEffect(() => {
-    if (userStates.token) {
-      setLoginPopup(false);
-    }
-  }, [userStates]);
-
-  useEffect(() => {
     const scrollEvent = (e: MouseEvent) => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       if (e.pageX / width < 0.9 || e.pageY / height > 0.2) {
         setMenuIsOpen(false);
       }
-      // console.log('e.pageX' + e.pageX + 'e.pageY' + e.pageY);
       if (e.pageX / width < 0.15 || e.pageX / width > 0.85) {
         setSearchItemsList([]);
       }

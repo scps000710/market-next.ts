@@ -21,11 +21,11 @@ export default function handler(
   }
   const title = (req.query.title as string).toUpperCase();
   const result: Data = [];
-  for (const i in ItemSource) {
-    if (ItemSource[i].title.toUpperCase().includes(title)) {
-      result.push(ItemSource[i]);
+  ItemSource.forEach((item) => {
+    if (item.title.toUpperCase().includes(title)) {
+      result.push(item);
     }
-  }
+  });
 
   res.status(200).json(result);
 }
