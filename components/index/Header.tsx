@@ -68,6 +68,7 @@ const Header = () => {
 
   const logOutOrIn = () => {
     if (userStates.isLogin) {
+      setTotalY(0);
       dispatch(logOut());
       toast.success(`登出成功`, {
         style: {
@@ -166,7 +167,12 @@ const Header = () => {
           placeholder="Search"
         />
       </div>
-      <div className={style.headerSearchList}>
+      <div
+        className={style.headerSearchList}
+        onClick={() => {
+          setSearchItemsList([]);
+        }}
+      >
         {searchItemsList.map((item: itemObject, index) => {
           return <SearchItem key={index} {...item} />;
         })}

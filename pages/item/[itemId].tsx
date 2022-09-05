@@ -50,7 +50,7 @@ const ItemPage = () => {
         setItem(result.data);
       }
     })();
-  }, [router.isReady]);
+  }, [router]);
 
   const onBuyButtonClick = () => {
     if (userStates.isLogin) {
